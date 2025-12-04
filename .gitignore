@@ -1,0 +1,86 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Claude Code
+.claude/
+
+# NPM package files
+*.tgz
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Node modules (if installed for testing)
+node_modules/
+
+# Test and development files
+test-local.sh
+
+# Deprecated/Old files
+check-webpack-services.js
+check-webpack-services.sh
+
+# Optional shell scripts (not needed for npm package)
+check-dev-services.sh
+check-dev-services.ps1
+
+# Development-only documentation (not for npm package)
+CONTRIBUTING.md
+EXAMPLES.md
+PUBLISH.md
+QUICK_START.md
+WINDOWS.md

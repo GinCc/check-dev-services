@@ -1,0 +1,75 @@
+{
+  "name": "dev-server-checker",
+  "version": "1.0.0",
+  "description": "🔍 A simple but powerful cross-platform CLI tool to detect and display all running frontend development servers (Webpack, Vite, Next.js, etc.) on your machine",
+  "main": "check-dev-services.js",
+  "bin": {
+    "check-dev": "./bin/check-dev",
+    "dev-check": "./bin/check-dev",
+    "cdev": "./bin/check-dev"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0",
+    "prepare": "chmod +x bin/check-dev check-dev-services.js",
+    "prepublishOnly": "npm run prepare"
+  },
+  "keywords": [
+    "dev-server",
+    "development-server",
+    "webpack",
+    "webpack-dev-server",
+    "vite",
+    "nextjs",
+    "next.js",
+    "nuxtjs",
+    "nuxt.js",
+    "vue-cli",
+    "create-react-app",
+    "angular-cli",
+    "development",
+    "cli",
+    "cli-tool",
+    "tool",
+    "port-checker",
+    "port-detection",
+    "process-monitor",
+    "frontend",
+    "frontend-tools",
+    "developer-tools",
+    "devtools"
+  ],
+  "author": {
+    "name": "Gin",
+    "email": "392286507@qq.com",
+    "url": "https://github.com/GinCc"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GinCc/check-dev-services.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GinCc/check-dev-services/issues"
+  },
+  "homepage": "https://github.com/GinCc/check-dev-services#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "files": [
+    "bin/",
+    "check-dev-services.js",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "directories": {
+    "doc": "."
+  },
+  "preferGlobal": true
+}

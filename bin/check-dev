@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+// Load and execute the main script
+const findDevServices = require('../check-dev-services.js');
+findDevServices();

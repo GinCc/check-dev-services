@@ -1,0 +1,39 @@
+# Development files
+.git
+.gitignore
+.claude/
+
+# Old/deprecated files
+check-webpack-services.js
+check-webpack-services.sh
+
+# Documentation (keep only essential)
+CONTRIBUTING.md
+EXAMPLES.md
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Test files (when added)
+test/
+tests/
+*.test.js
+*.spec.js
+
+# CI/CD
+.github/
+.travis.yml
+.gitlab-ci.yml
+
+# Misc
+*.log
+.cache
