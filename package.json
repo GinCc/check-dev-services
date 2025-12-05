@@ -1,6 +1,6 @@
 {
   "name": "dev-server-checker",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "🔍 A simple but powerful cross-platform CLI tool to detect and display all running frontend development servers (Webpack, Vite, Next.js, etc.) on your machine",
   "main": "check-dev-services.js",
   "bin": {

@@ -19,7 +19,7 @@ async function findDevServicesUnix() {
     ).catch(() => ({ stdout: '' }));
 
     if (!lsofOutput.trim()) {
-      console.log('未找到运行中的 Node.js 服务');
+      console.log('No running Node.js services found');
       return;
     }
 
@@ -41,7 +41,7 @@ async function findDevServicesUnix() {
       }
     }
 
-    console.log(`找到 ${processMap.size} 个监听端口的 Node.js 服务:\n`);
+    console.log(`Found ${processMap.size} Node.js service(s) listening on ports:\n`);
 
     let foundDevService = false;
 
@@ -111,25 +111,25 @@ async function findDevServicesUnix() {
         foundDevService = true;
 
         console.log('------------------------------------------');
-        console.log(`进程 ID: ${pid}`);
+        console.log(`PID: ${pid}`);
 
         if (serviceType) {
-          console.log(`服务类型: ${serviceType}`);
+          console.log(`Service Type: ${serviceType}`);
         }
 
-        console.log(`命令: ${cmd}`);
+        console.log(`Command: ${cmd}`);
 
         if (cwd) {
-          console.log(`工作目录: ${cwd}`);
+          console.log(`Working Directory: ${cwd}`);
         }
 
         if (packageInfo) {
-          console.log('项目信息:');
-          if (packageInfo.name) console.log(`  名称: ${packageInfo.name}`);
-          if (packageInfo.version) console.log(`  版本: ${packageInfo.version}`);
+          console.log('Project Info:');
+          if (packageInfo.name) console.log(`  Name: ${packageInfo.name}`);
+          if (packageInfo.version) console.log(`  Version: ${packageInfo.version}`);
         }
 
-        console.log('监听端口:');
+        console.log('Listening Ports:');
         ports.forEach(port => {
           console.log(`  - http://localhost:${port}`);
         });
@@ -139,11 +139,11 @@ async function findDevServicesUnix() {
     }
 
     if (!foundDevService) {
-      console.log('未找到前端开发服务（Webpack/Vite）');
+      console.log('No frontend dev services found (Webpack/Vite)');
     }
 
   } catch (error) {
-    console.error('检测过程中出现错误:', error.message);
+    console.error('Error during detection:', error.message);
   }
 }
 
@@ -155,7 +155,7 @@ async function findDevServicesWindows() {
     ).catch(() => ({ stdout: '' }));
 
     if (!netstatOutput.trim()) {
-      console.log('未找到运行中的服务');
+      console.log('No running services found');
       return;
     }
 
@@ -187,7 +187,7 @@ async function findDevServicesWindows() {
     let foundDevService = false;
     let nodeProcessCount = 0;
 
-    console.log(`扫描到 ${processMap.size} 个监听端口的进程\n`);
+    console.log(`Scanned ${processMap.size} process(es) listening on ports\n`);
 
     for (const [pid, ports] of processMap) {
       // 获取进程信息
@@ -287,25 +287,25 @@ async function findDevServicesWindows() {
         foundDevService = true;
 
         console.log('------------------------------------------');
-        console.log(`进程 ID: ${pid}`);
+        console.log(`PID: ${pid}`);
 
         if (serviceType) {
-          console.log(`服务类型: ${serviceType}`);
+          console.log(`Service Type: ${serviceType}`);
         }
 
-        console.log(`命令: ${cmd.substring(0, 200)}${cmd.length > 200 ? '...' : ''}`);
+        console.log(`Command: ${cmd.substring(0, 200)}${cmd.length > 200 ? '...' : ''}`);
 
         if (cwd) {
-          console.log(`工作目录: ${cwd}`);
+          console.log(`Working Directory: ${cwd}`);
         }
 
         if (packageInfo) {
-          console.log('项目信息:');
-          if (packageInfo.name) console.log(`  名称: ${packageInfo.name}`);
-          if (packageInfo.version) console.log(`  版本: ${packageInfo.version}`);
+          console.log('Project Info:');
+          if (packageInfo.name) console.log(`  Name: ${packageInfo.name}`);
+          if (packageInfo.version) console.log(`  Version: ${packageInfo.version}`);
         }
 
-        console.log('监听端口:');
+        console.log('Listening Ports:');
         ports.forEach(port => {
           console.log(`  - http://localhost:${port}`);
         });
@@ -315,13 +315,13 @@ async function findDevServicesWindows() {
     }
 
     if (nodeProcessCount === 0) {
-      console.log('未找到运行中的 Node.js 服务');
+      console.log('No running Node.js services found');
     } else if (!foundDevService) {
-      console.log('未找到前端开发服务（Webpack/Vite）');
+      console.log('No frontend dev services found (Webpack/Vite)');
     }
 
   } catch (error) {
-    console.error('检测过程中出现错误:', error.message);
+    console.error('Error during detection:', error.message);
   }
 }
 
@@ -354,8 +354,8 @@ function detectServiceType(packageInfo) {
 
 async function findDevServices() {
   console.log('==========================================');
-  console.log('检测正在运行的前端开发服务');
-  console.log(`操作系统: ${os.platform()}`);
+  console.log('Detecting running frontend dev services');
+  console.log(`OS: ${os.platform()}`);
   console.log('==========================================\n');
 
   if (isWindows) {
